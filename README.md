@@ -1,10 +1,17 @@
-# NewsApp
+## NewsApp ✍️
 
 A new Flutter project.
 
 ## ٌRun 
+ 
+ ## After using the API in the data
 
+https://github.com/user-attachments/assets/e1b135f3-31ba-4b52-81c5-4c06c83256d8
+
+
+## Before using the API in the data
 https://github.com/user-attachments/assets/07d0b4bf-8f86-46d8-b161-372bcc114af6
+
 
 ## Search
 
