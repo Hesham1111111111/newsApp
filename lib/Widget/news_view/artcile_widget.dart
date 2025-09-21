@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../Model/news_view.dart';
 
 class ArtcileWidget extends StatefulWidget {
-  ArtcileWidget({super.key, required this.show});
+  ArtcileWidget({super.key, required this.article});
 
-  Show show;
+  final Article article;
 
   @override
   State<ArtcileWidget> createState() => _ArtcileWidgetState();
@@ -25,7 +25,8 @@ class _ArtcileWidgetState extends State<ArtcileWidget> {
             topRight: Radius.circular(60),
           ),
           child: Image.network(
-            widget.show.image,
+            widget.article.urlToImage ?? "No Image ",
+
             width: double.infinity,
             height: 200,
             fit: BoxFit.fill,
@@ -38,7 +39,7 @@ class _ArtcileWidgetState extends State<ArtcileWidget> {
             });
           },
           child: Text(
-            widget.show.name,
+            widget.article.title,
             maxLines: seemore ? null : 2,
             overflow: seemore ? TextOverflow.visible : TextOverflow.ellipsis,
             style: const TextStyle(fontSize: 30),
@@ -51,7 +52,7 @@ class _ArtcileWidgetState extends State<ArtcileWidget> {
             });
           },
           child: Text(
-            widget.show.name,
+            widget.article.description ?? "No description",
             maxLines: seemore ? null : 2,
             overflow: seemore ? TextOverflow.visible : TextOverflow.ellipsis,
             style: const TextStyle(fontSize: 30, color: Colors.black54),

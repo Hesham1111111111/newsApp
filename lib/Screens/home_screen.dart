@@ -1,10 +1,10 @@
-import 'package:alahly/Style.dart';
+import 'package:alahly/style/Style.dart';
 import 'package:flutter/material.dart';
 import '../Widget/Categors_widgt/ListCategory.dart' show Listcategory;
 import '../Widget/news_view/list_viwe.dart';
 
 class HomeScerrn extends StatelessWidget {
-  const HomeScerrn({super.key});
+  HomeScerrn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,22 +19,23 @@ class HomeScerrn extends StatelessWidget {
         ),
       ),
 
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Listcategory(),
-              const SizedBox(height: 30),
-              Text(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: Listcategory()),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: Text(
                 "General News ",
-                style: Stayle.stayle2.copyWith(color: Colors.black54),
+                style: Stayle.stayle2.copyWith(
+                  fontSize: 35,
+                  color: Colors.black87,
+                ),
               ),
-              ListViwe_artcile(),
-            ],
+            ),
           ),
-        ),
+          SliverToBoxAdapter(child: ListViwe_artcile()),
+        ],
       ),
     );
   }

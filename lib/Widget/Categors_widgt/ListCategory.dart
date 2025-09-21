@@ -8,14 +8,17 @@ class Listcategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 120,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: categorys.length,
-        itemBuilder: (context, index) {
-          return CatogoryItems(category: categorys[index]);
-        },
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: SizedBox(
+        height: 120,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: categorys.length,
+          itemBuilder: (context, index) {
+            return CatogoryItems(category: categorys[index]);
+          },
+        ),
       ),
     );
   }

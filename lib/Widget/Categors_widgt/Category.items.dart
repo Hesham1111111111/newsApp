@@ -1,7 +1,8 @@
-import 'package:alahly/Model/Category.dart';
+import 'package:alahly/Screens/view_gategory.dart';
 import 'package:flutter/material.dart';
 
-import '../../Style.dart';
+import '../../Model/Category.dart';
+import '../../style/Style.dart';
 
 class CatogoryItems extends StatelessWidget {
   CatogoryItems({super.key, required this.category});
@@ -13,8 +14,21 @@ class CatogoryItems extends StatelessWidget {
     return CircleAvatar(
       backgroundImage: NetworkImage(category.imge),
       backgroundColor: Colors.teal,
-      radius: 70,
-      child: Text(category.name, style: Stayle.stayle1),
+      radius: 80,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) {
+                return ViewGategory(title: category.name);
+              },
+            ),
+          );
+        },
+
+        child: Text(category.name, style: Stayle.stayle1,),
+      ),
     );
   }
 }
